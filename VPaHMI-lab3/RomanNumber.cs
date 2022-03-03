@@ -15,14 +15,14 @@ namespace VPaHMI_lab3
         }
 
         //Сложение римских чисел
-        public static RomanNumber Add(RomanNumber? n1, RomanNumber? n2)
+        public static RomanNumber operator + (RomanNumber? n1, RomanNumber? n2)
         {
             if (n1 == null || n2 == null) throw new RomanNumberException("ERROR: One or more numbers are null");
             return new RomanNumber((ushort)(n1._number + n2._number));
         }
 
         //Вычитание римских чисел
-        public static RomanNumber Sub(RomanNumber? n1, RomanNumber? n2)
+        public static RomanNumber operator - (RomanNumber? n1, RomanNumber? n2)
         {
             if (n1 == null || n2 == null) throw new RomanNumberException("ERROR: One or more numbers are null");
             if (n1._number <= n2._number) throw new RomanNumberException("ERROR: The second number is greater than or equal to the first number");
@@ -30,7 +30,7 @@ namespace VPaHMI_lab3
         }
 
         //Умножение римских чисел
-        public static RomanNumber Mul(RomanNumber? n1, RomanNumber? n2)
+        public static RomanNumber operator * (RomanNumber? n1, RomanNumber? n2)
         {
             if (n1 == null || n2 == null) throw new RomanNumberException("ERROR: One or more numbers are null");
             if (n1._number * n2._number == 0) throw new RomanNumberException("ERROR: Result equal to 0");
@@ -38,7 +38,7 @@ namespace VPaHMI_lab3
         }
 
         //Целочисленное деление римских чисел
-        public static RomanNumber Div(RomanNumber? n1, RomanNumber? n2)
+        public static RomanNumber operator / (RomanNumber? n1, RomanNumber? n2)
         {
             if (n1 == null || n2 == null) throw new RomanNumberException("ERROR: One or more numbers are null");
             if (n1._number / n2._number <= 0) throw new RomanNumberException("ERROR: Result less than or equal to 0");
